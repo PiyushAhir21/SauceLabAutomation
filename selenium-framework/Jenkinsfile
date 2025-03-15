@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/yourusername/selenium-framework.git'
+                git 'https://github.com/PiyushAhir21/SauceLabFramework.git'
             }
         }
         stage('Build & Test') {
@@ -23,13 +23,13 @@ pipeline {
                 }
             }
         }
-        stage('Docker Build') {
+       /* stage('Docker Build') {
             steps {
                 script {
                     docker.build("selenium-framework:${env.BUILD_ID}")
                 }
             }
-        }
+        }*/
         stage('Cleanup') {
             steps {
                 cleanWs()  // Clean workspace after build
