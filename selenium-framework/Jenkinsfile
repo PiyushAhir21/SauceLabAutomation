@@ -8,6 +8,7 @@ pipeline {
         }
         stage('Build & Test') {
             steps {
+				cd selenium-framework 
                 bat 'mvn clean test'  // Run Maven tests
             }
             post {
@@ -16,9 +17,9 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: false,
                         keepAll: true,
-                        reportDir: 'target',
-                        reportFiles: 'adv-report.html',
-                        reportName: 'Report Name'
+                        reportDir: 'selenium-framework/target/extent-reports', // Correct path
+                        reportFiles: 'index.html',
+                        reportName: 'Extent Report'
                     ])
                 }
             }
