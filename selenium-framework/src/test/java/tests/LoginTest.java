@@ -2,12 +2,14 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
+import listenersUtility.ListImp;
 import pages.InventoryPage;
 import pages.LoginPage;
 import utility.BaseTest;
 
+@Listeners(ListImp.class)
 public class LoginTest extends BaseTest {
 	@Test(dataProvider = "loginData")
 	public void testLogin(String username, String password, boolean isValid) {

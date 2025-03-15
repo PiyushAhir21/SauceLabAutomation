@@ -76,7 +76,7 @@ public class InventoryPage {
         new Select(sortDropdown).selectByVisibleText(option);
         
         // Wait for sorting to complete
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOfAllElements(productNames)));
     }
 

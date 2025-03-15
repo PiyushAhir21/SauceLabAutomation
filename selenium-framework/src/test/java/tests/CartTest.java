@@ -6,13 +6,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import listenersUtility.ListImp;
 import pages.CartPage;
 import pages.InventoryPage;
 import pages.LoginPage;
 import utility.BaseTest;
 
+@Listeners(ListImp.class)
 public class CartTest extends BaseTest {
     @Test
     public void testRemoveProduct() {

@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 	public WebDriver driver;
+	public static WebDriver sdriver;
 
 	@BeforeMethod
 	public void setup() {
@@ -17,6 +18,7 @@ public class BaseTest {
 		} else if (browser.equals("firefox")) {
 			driver = new FirefoxDriver();
 		}
+		sdriver = driver;
 		driver.manage().window().maximize();
 		driver.get("https://www.saucedemo.com/");
 	}

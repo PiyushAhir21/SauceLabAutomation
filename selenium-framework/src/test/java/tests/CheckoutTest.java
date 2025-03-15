@@ -1,14 +1,17 @@
 package tests;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import listenersUtility.ListImp;
 import pages.CartPage;
 import pages.CheckoutPage;
 import pages.InventoryPage;
 import pages.LoginPage;
 import utility.BaseTest;
 
+@Listeners(ListImp.class)
 public class CheckoutTest extends BaseTest {
 
 	@Test

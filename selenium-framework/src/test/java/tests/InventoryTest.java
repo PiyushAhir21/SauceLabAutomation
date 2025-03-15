@@ -6,12 +6,15 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import listenersUtility.ListImp;
 import pages.InventoryPage;
 import pages.LoginPage;
 import utility.BaseTest;
 
+@Listeners(ListImp.class)
 public class InventoryTest extends BaseTest {
     @Test
     public void testProductSorting() {
