@@ -16,20 +16,20 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: false,
                         keepAll: true,
-                        reportDir: 'Advance_reporting',
+                        reportDir: './Advance_reporting',
                         reportFiles: 'report.html',
                         reportName: 'Report Name'
                     ])
                 }
             }
         }
-        stage('Docker Build') {
+       /* stage('Docker Build') {
             steps {
                 script {
                     docker.build("selenium-framework:${env.BUILD_ID}")
                 }
             }
-        }
+        }*/
         stage('Cleanup') {
             steps {
                 cleanWs()  // Clean workspace after build
