@@ -8,8 +8,9 @@ pipeline {
         }
         stage('Build & Test') {
             steps {
-				/*cd selenium-framework*/ 
-                bat 'mvn clean test'
+                dir('selenium-framework') { // Change to the directory containing pom.xml
+                    bat 'mvn clean test'
+                }
             }
             post {
                 always {
@@ -24,13 +25,15 @@ pipeline {
                 }
             }
         }
-       /* stage('Docker Build') {
+        /* Uncomment this stage if you want to build a Docker image
+        stage('Docker Build') {
             steps {
                 script {
                     docker.build("selenium-framework:${env.BUILD_ID}")
                 }
             }
-        }*/
+        }
+        */
         stage('Cleanup') {
             steps {
                 cleanWs()  // Clean workspace after build
