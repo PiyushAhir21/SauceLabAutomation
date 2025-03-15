@@ -22,7 +22,7 @@ public class ListImp implements ITestListener, ISuiteListener {
 	@Override
 	public void onStart(ISuite suite) {
 		// TODO Auto-generated method stub
-		ExtentSparkReporter spark = new ExtentSparkReporter("./Advance_reporting/report.html");
+		ExtentSparkReporter spark = new ExtentSparkReporter("./target/adv-report.html");
 		spark.config().setDocumentTitle("Document title");
 		spark.config().setReportName("Report Name");
 		spark.config().setTheme(Theme.DARK);

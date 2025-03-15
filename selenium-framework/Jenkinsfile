@@ -16,8 +16,8 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: false,
                         keepAll: true,
-                        reportDir: './Advance_reporting',
-                        reportFiles: 'report.html',
+                        reportDir: 'target',
+                        reportFiles: 'adv-report.html',
                         reportName: 'Report Name'
                     ])
                 }
