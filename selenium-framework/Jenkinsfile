@@ -17,8 +17,8 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: false,
                         keepAll: true,
-                        reportDir: 'selenium-framework/target/extent-reports', // Correct path
-                        reportFiles: 'index.html',
+                        reportDir: 'selenium-framework/Advance_reporting',
+                        reportFiles: 'report.html',
                         reportName: 'Extent Report'
                     ])
                 }
