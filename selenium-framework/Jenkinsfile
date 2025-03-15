@@ -8,8 +8,8 @@ pipeline {
         }
         stage('Build & Test') {
             steps {
-				cd selenium-framework 
-                bat 'mvn clean test'  // Run Maven tests
+				/*cd selenium-framework*/ 
+                bat 'mvn clean test'
             }
             post {
                 always {
