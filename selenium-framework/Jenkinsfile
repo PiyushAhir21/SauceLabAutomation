@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build & Test') {
             steps {
-                sh 'mvn clean test'  // Run Maven tests
+                bat 'mvn clean test'  // Run Maven tests
             }
             post {
                 always {
@@ -18,18 +18,18 @@ pipeline {
                         keepAll: true,
                         reportDir: 'Advance_reporting',
                         reportFiles: 'report.html',
-                        reportName: 'Extent Report'
+                        reportName: 'Report Name'
                     ])
                 }
             }
         }
-       /* stage('Docker Build') {
+        stage('Docker Build') {
             steps {
                 script {
                     docker.build("selenium-framework:${env.BUILD_ID}")
                 }
             }
-        }*/
+        }
         stage('Cleanup') {
             steps {
                 cleanWs()  // Clean workspace after build
